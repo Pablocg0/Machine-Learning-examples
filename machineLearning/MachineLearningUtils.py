@@ -18,7 +18,7 @@ class MachineLearningUtils:
         column =0 #variable para el control de la columna se encuentras
         size = A.shape[1] # Numero de filas del arreglo original
         sizeColumn =A.shape[0] #Numero de columnas de arreglo original
-        C = np.zeros([2,sizeColumn]) #Arreglo del tamano 2xnvariable para el control de que el fila de la columna se encuentras
+        C = np.zeros([2,sizeColumn]) #Arreglo del tamano 2xn
         B = np.zeros(A.shape) #Arreglo del mismo tamano que el original
         for list in A:
             for x in list:
@@ -28,7 +28,7 @@ class MachineLearningUtils:
                 norm = x - prom/stdesv
                 C[0,column] = prom #guardamos el promdio
                 C[1,column] = stdesv #guardamos la desviacionEstandar
-                B[column,mod]= prom
-                row = row +1 #guardamos el valor normalizados
+                B[column,mod]= prom #guardamos el valor normalizados
+                row = row +1
             column = column + 1
         return (B,C)
