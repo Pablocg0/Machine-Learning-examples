@@ -13,7 +13,7 @@ class MachineLearningUtils:
     #C es  un arreglo de tamano 2xn donde n es el numero de columnas del arreglo original
     #en la posicion 1xn se guarda el promedio de la columna y en la posicion 2xn se guarda
     #el valor de la desviacionEstandar de la columna
-    def normData(sellf, A):
+    def normData(self, A):
         row= 0 #variable para el control de la fila del arreglo se encuentras
         column =0 #variable para el control de la columna se encuentras
         size = A.shape[1] # Numero de filas del arreglo original
@@ -25,7 +25,7 @@ class MachineLearningUtils:
                 mod = row%size
                 prom = np.mean(A[column:column+1]) # promedio del columna
                 stdesv= np.std(A[column:column+1]) # desviacionEstandar de la columna
-                norm = x - prom/stdesv
+                norm = (x - prom)/stdesv
                 C[0,column] = prom #guardamos el promdio
                 C[1,column] = stdesv #guardamos la desviacionEstandar
                 B[column,mod]= prom #guardamos el valor normalizados
